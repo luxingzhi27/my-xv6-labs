@@ -173,15 +173,12 @@ mkfs/mkfs: mkfs/mkfs.c $K/fs.h $K/param.h
 # Prevent deletion of intermediate files, e.g. cat.o, after first build, so
 # that disk image changes after first build are persistent until clean.  More
 # details:
-# http://www.gnu.org/software/make/manual/html_node/Chained-Rules.htm# include "kernel/types.h"l
+# http://www.gnu.org/software/make/manual/html_node/Chained-Rules.html
 .PRECIOUS: %.o
 
 UPROGS=\
-	$U/_xargs\
-	$U/_find\
-	$U/_sleep\
-	$U/_primes\
-	$U/_pingpong\
+	$U/_sysinfotest\
+	$U/_trace\
 	$U/_cat\
 	$U/_echo\
 	$U/_forktest\
